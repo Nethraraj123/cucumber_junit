@@ -3,7 +3,32 @@
   <groupId>Moolyaed</groupId>
   <artifactId>cucumber_project_junit</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-
+ <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+  <build>
+  <pluginManagement>
+   <plugins>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.2.5</version>
+         <configuration>
+     <includes>
+<!-- the java file name is added here in the surefire configurartion -->
+     <exclude>**/*Login_runner.java</exclude>
+     </includes>
+     </configuration>
+      </plugin>
+    <plugin>
+     <groupId>org.apache.maven.plugins</groupId>
+     <artifactId>maven-compiler-plugin</artifactId>
+     <version>3.12.1</version>
+    </plugin>
+   </plugins>
+  </pluginManagement>
+ </build>
 <dependencies>
 <!--  https://mvnrepository.com/artifact/io.cucumber/cucumber-java  -->
 <dependency>
